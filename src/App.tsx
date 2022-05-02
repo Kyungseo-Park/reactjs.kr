@@ -1,9 +1,9 @@
 import HeaderLayout from 'components/Layouts/HeaderLayout';
-import React, { useState } from 'react';
-import styled, { ThemeProvider } from 'styled-components';
-import { GlobalStyle, DarkModeToggleButton } from 'styles/global';
+import { useState } from 'react';
+import { ThemeProvider } from 'styled-components';
+import { GlobalStyle, MainCopmonent } from 'styles/global';
 import { darkTheme, lightTheme } from 'styles/theme';
-import './App.css';
+import { Outlet as BodyComponent } from 'react-router-dom';
 
 function App() {
   // TODO:: Status 로 관리하면 좋을 듯
@@ -21,6 +21,9 @@ function App() {
     <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
       <GlobalStyle />
       <HeaderLayout toggleTheme={toggleTheme} isLight={isLight} />
+      <MainCopmonent>
+        <BodyComponent />
+      </MainCopmonent>
     </ThemeProvider>
   );
 }

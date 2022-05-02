@@ -21,6 +21,5 @@ export const GlobalStyle = createGlobalStyle`
     }
 `;
 
-export const DarkModeToggleButton = styled.button<{ isLight: boolean }>`
-  background: ${({ theme }: { theme: ThemeType }) => theme.buttonBackgroundColor};
-`;
+// 스타일 어떻게 추가할지 생각좀 해보자
+export const MainCopmonent = styled.main``;
