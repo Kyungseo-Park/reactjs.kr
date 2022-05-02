@@ -1,25 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
+import HeaderLayout from 'components/Layouts/HeaderLayout';
+import React, { useState } from 'react';
+import styled, { ThemeProvider } from 'styled-components';
+import { GlobalStyle, DarkModeToggleButton } from 'styles/global';
+import { darkTheme, lightTheme } from 'styles/theme';
 import './App.css';
 
 function App() {
+  // TODO:: Status 로 관리하면 좋을 듯
+  const [theme, setTheme] = useState<'dark' | 'light'>('dark');
+  const isLight: boolean = theme === 'light';
+  const toggleTheme = () => {
+    if (theme === 'light') {
+      setTheme('dark');
+    } else {
+      setTheme('light');
+    }
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
+      <GlobalStyle />
+      <HeaderLayout toggleTheme={toggleTheme} isLight={isLight} />
+    </ThemeProvider>
   );
 }
 
