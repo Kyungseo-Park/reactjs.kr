@@ -11,7 +11,9 @@ function HeaderLayout({ toggleTheme, isLight }: Props) {
   return (
     <HeaderContaienr>
       <div className="logo">
-        <h1>Reactjs.kr</h1>
+        <Link to="/">
+          <h1>Reactjs.kr</h1>
+        </Link>
       </div>
       <div className="header_nav">
         <Link to="/kkyungvelyy" className={`${pathname.includes('kkyungvelyy') ? 'active' : ''} nav_link`}>
@@ -29,7 +31,7 @@ function HeaderLayout({ toggleTheme, isLight }: Props) {
           GitHub
         </a>
         <DarkModeButton type="button" onClick={() => toggleTheme()} isLight={isLight}>
-          {isLight ? '다크' : '화이트'}
+          {isLight ? '레거시 컬러 ㄱ' : '모던 컬러 ㄱ'}
         </DarkModeButton>
       </div>
     </HeaderContaienr>
