@@ -1,19 +1,17 @@
 import styled from 'styled-components';
 import { ThemeType } from 'styles/theme';
 
-export const HeaderContaienr = styled.div`
+export const HeaderContaienr = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 10px 50px;
   box-shadow: 0 1px 5px 1px rgba(0, 0, 0, 0.2);
-  width: 100vw;
+  width: 100%;
   position: fixed;
   background: ${({ theme }: { theme: ThemeType }) => theme.headerBackgroundColor};
   transition: all 0.5s ease-in-out;
-  /* background: ${({ theme }: { theme: ThemeType }) => theme.backgroundColor};
-  height: 120px;
-  width: 100%; */
+  height: 50px;
 
   .logo > h1 {
     cursor: pointer;

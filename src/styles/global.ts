@@ -22,4 +22,7 @@ export const GlobalStyle = createGlobalStyle`
 `;
 
 // 스타일 어떻게 추가할지 생각좀 해보자
-export const MainCopmonent = styled.main``;
+export const MainCopmonent = styled.main`
+  text-align: center;
+  padding-top: 50px;
+`;
